@@ -10,8 +10,6 @@ C_SRCS += \
 ../Core/Src/fsm_manual.c \
 ../Core/Src/fsm_setting.c \
 ../Core/Src/global.c \
-../Core/Src/input_processing.c \
-../Core/Src/input_reading.c \
 ../Core/Src/led7_segment.c \
 ../Core/Src/main.c \
 ../Core/Src/software_timer.c \
@@ -20,7 +18,6 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
-../Core/Src/timer.c \
 ../Core/Src/traffic_light.c 
 
 OBJS += \
@@ -29,8 +26,6 @@ OBJS += \
 ./Core/Src/fsm_manual.o \
 ./Core/Src/fsm_setting.o \
 ./Core/Src/global.o \
-./Core/Src/input_processing.o \
-./Core/Src/input_reading.o \
 ./Core/Src/led7_segment.o \
 ./Core/Src/main.o \
 ./Core/Src/software_timer.o \
@@ -39,7 +34,6 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
-./Core/Src/timer.o \
 ./Core/Src/traffic_light.o 
 
 C_DEPS += \
@@ -48,8 +42,6 @@ C_DEPS += \
 ./Core/Src/fsm_manual.d \
 ./Core/Src/fsm_setting.d \
 ./Core/Src/global.d \
-./Core/Src/input_processing.d \
-./Core/Src/input_reading.d \
 ./Core/Src/led7_segment.d \
 ./Core/Src/main.d \
 ./Core/Src/software_timer.d \
@@ -58,7 +50,6 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
-./Core/Src/timer.d \
 ./Core/Src/traffic_light.d 
 
 

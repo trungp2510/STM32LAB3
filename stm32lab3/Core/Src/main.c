@@ -25,11 +25,9 @@
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
 #include "software_timer.h"
-#include "input_processing.h"
-#include "input_reading.h"
 #include "global.h"
-#include "timer.h"
 #include "led7_segment.h"
+#include "button.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,14 +97,6 @@ void update7SEG (int index){
 			break;
 	}
 }
-void updateClockBuffer_NS(){
-	led_buffer[2] = sec / 10;
-	led_buffer[3] = sec % 10;
-}
-void updateClockBuffer_EW(){
-	led_buffer[0] = sec / 10;
-	led_buffer[1] = sec % 10;
-}
 /* USER CODE END 0 */
 
 /**
@@ -139,7 +129,8 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  status = INIT;
+  HAL_TIM_Base_Start_IT (& htim2 );
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -154,7 +145,6 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
-
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -286,7 +276,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
+{ //10ms
+	timerRun();
+	getKeyInput();
+}
 /* USER CODE END 4 */
 
 /**
