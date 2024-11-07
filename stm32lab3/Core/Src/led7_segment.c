@@ -5,7 +5,7 @@
  *      Author: Fung
  */
 
-#include "main.h"
+#include "led7_segment.h"
 void display7SEG(int num){
 	 switch (num)
 			  {
