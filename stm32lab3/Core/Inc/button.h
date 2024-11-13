@@ -13,8 +13,9 @@
 #define NORMAL_STATE GPIO_PIN_SET
 #define PRESSED_STATE GPIO_PIN_RESET
 
-int isButtonPressed();
+extern int button_flag[3];
+void subKeyProcess(int index);
+int isButtonPressed(int index);
 void getKeyInput();
-void subKeyProcess();
 
 #endif /* INC_BUTTON_H_ */

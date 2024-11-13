@@ -10,7 +10,10 @@
 
 #include "global.h"
 #include "traffic_light.h"
+#include "button.h"
+#include "fsm_manual.h"
 
+void clear_traffic_light();
 void fsm_automatic_run();
 
 #endif /* INC_FSM_AUTOMATIC_H_ */

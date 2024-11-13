@@ -8,6 +8,15 @@
 #ifndef INC_TRAFFIC_LIGHT_H_
 #define INC_TRAFFIC_LIGHT_H_
 
-void traffic_light_run();
+#include "global.h"
+#include "main.h"
+
+void clear_traffic_light();
+void onRed_NS();
+void onYellow_NS();
+void onGreen_NS();
+void onRed_EW();
+void onYellow_EW();
+void onGreen_EW();
 
 #endif /* INC_TRAFFIC_LIGHT_H_ */
