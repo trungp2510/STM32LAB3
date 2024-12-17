@@ -24,11 +24,11 @@
 /* USER CODE BEGIN Includes */
 #include "fsm_automatic.h"
 #include "fsm_manual.h"
+#include "fsm_setting.h"
 #include "software_timer.h"
 #include "global.h"
 #include "led7_segment.h"
 #include "button.h"
-#include "traffic_light.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,43 +62,7 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-const int MAX_LED = 4;
-int index_led = 0;
-int led_buffer [4] = {1, 2, 3, 4};
-void update7SEG (int index){
-	switch (index){
-		case 0:
-			HAL_GPIO_WritePin(EN0_GPIO_Port,EN0_Pin,RESET);
-			HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin,SET);
-			HAL_GPIO_WritePin(EN2_GPIO_Port,EN2_Pin,SET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port,EN3_Pin,SET);
-			display7SEG(led_buffer[0]);
-			break;
-		case 1:
-			HAL_GPIO_WritePin(EN0_GPIO_Port,EN0_Pin,SET);
-			HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin,RESET);
-			HAL_GPIO_WritePin(EN2_GPIO_Port,EN2_Pin,SET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port,EN3_Pin,SET);
-			display7SEG(led_buffer[1]);
-			break;
-		case 2:
-			HAL_GPIO_WritePin(EN0_GPIO_Port,EN0_Pin,SET);
-			HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin,SET);
-			HAL_GPIO_WritePin(EN2_GPIO_Port,EN2_Pin,RESET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port,EN3_Pin,SET);
-			display7SEG(led_buffer[2]);
-			break;
-		case 3:
-			HAL_GPIO_WritePin(EN0_GPIO_Port,EN0_Pin,SET);
-			HAL_GPIO_WritePin(EN1_GPIO_Port,EN1_Pin,SET);
-			HAL_GPIO_WritePin(EN2_GPIO_Port,EN2_Pin,SET);
-			HAL_GPIO_WritePin(EN3_GPIO_Port,EN3_Pin,RESET);
-			display7SEG(led_buffer[3]);
-			break;
-		default :
-			break;
-	}
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -134,6 +98,8 @@ int main(void)
 
   HAL_TIM_Base_Start_IT (& htim2 );
   status = INIT;
+  setTimer3(30);
+  setTimer4(100);
   /* USER CODE END 2 */
 
   /* Infinite loop */

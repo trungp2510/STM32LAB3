@@ -22,9 +22,21 @@
 #define MAN_GREEN	14
 
 extern int status;
-extern int led_on;
 
 extern int red_duration;
 extern int yellow_duration;
 extern int green_duration;
+
+extern int temp_red;
+extern int temp_yellow;
+extern int temp_green;
+
+extern int duration_led_NS;
+extern int duration_led_EW;
+
+extern int mode_led;
+
+extern int index_led;
+extern int led_buffer [4];
+
 #endif /* INC_GLOBAL_H_ */

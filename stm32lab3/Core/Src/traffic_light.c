@@ -34,3 +34,10 @@ void onGreen_EW(){
 	HAL_GPIO_WritePin(GREEN_EW_GPIO_Port, GREEN_EW_Pin, SET);
 }
 
+void time(){
+	if(timer4_flag == 1){
+		setTimer4(100);
+		duration_led_NS--;
+		duration_led_EW--;
+	}
+}

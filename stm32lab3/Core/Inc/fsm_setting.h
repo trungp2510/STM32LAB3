@@ -9,6 +9,7 @@
 #define INC_FSM_SETTING_H_
 
 #include "global.h"
-
+#include "button.h"
+#include "led7_segment.h"
 void fsm_setting_run();
 #endif /* INC_FSM_SETTING_H_ */
